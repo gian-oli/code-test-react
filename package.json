@@ -1,0 +1,41 @@
+{
+  "name": "spacex-api",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.8.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.85.1",
+    "un": "0.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint 'src/*/**/*.{js,jsx}'"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {}
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.57.1",
+    "eslint-config-react-app": "^7.0.1"
+  }
+}
