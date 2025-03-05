@@ -7,6 +7,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^5.0.1",
+    "react-transition-group": "^4.4.5",
     "sass": "^1.85.1",
     "un": "0.0.0"
   },

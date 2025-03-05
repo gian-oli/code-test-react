@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Spinner from '../Spinner/Spinner';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './launch.scss';
 
 export const Launches = ({ searchTerm }) => {
@@ -84,17 +85,21 @@ export const Launches = ({ searchTerm }) => {
     return (
         <div className="launches-container">
             <ul>
-                {filteredLaunches.map((launch, i) => {
-                    const isLastLaunch = filteredLaunches.length === i + 1;
-                    return (
-                        <li key={launch.flight_number} ref={isLastLaunch ? lastLaunchRef : null}>
-                            <h2>{launch.mission_name}</h2>
-                            <p>Launch Year: {launch.launch_year}</p>
-                            <p>Launch Success: {launch.launch_success ? 'Yes' : 'No'}</p>
-                            <p>Launch Date: {new Date(launch.launch_date_local).toLocaleString()}</p>
-                        </li>
-                    );
-                })}
+                <TransitionGroup>
+                    {filteredLaunches.map((launch, i) => {
+                        const isLastLaunch = filteredLaunches.length === i + 1;
+                        return (
+                            <CSSTransition key={launch.flight_number} timeout={300} classNames="fade">
+                                <li ref={isLastLaunch ? lastLaunchRef : null}>
+                                    <h2>{launch.mission_name}</h2>
+                                    <p>Launch Year: {launch.launch_year}</p>
+                                    <p>Launch Success: {launch.launch_success ? 'Yes' : 'No'}</p>
+                                    <p>Launch Date: {new Date(launch.launch_date_local).toLocaleString()}</p>
+                                </li>
+                            </CSSTransition>
+                        );
+                    })}
+                </TransitionGroup>
             </ul>
             {loading && <Spinner />}
             {!hasMore && !loading && <p>No more launches to display.</p>}

@@ -1,0 +1,95 @@
+$primary-bg: #1a1a1a;
+$header-bg: #282c34;
+$text-color: #ffffff;
+$link-color: #61dafb;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1a1a1a;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Arial', sans-serif;
+  color: $text-color;
+  width: 100%;
+  margin: 0;
+
+  background-image: url('./assets/background/space-background.jpg');
+  background-size: cover; // Change to contain to avoid zooming
+  background-repeat: no-repeat;
+  background-position: center;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .search-container {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+
+  .launches-container {
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(40, 44, 52, 0.8);
+  }
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: $header-bg;
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $text-color;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.App-link {
+  color: $link-color;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: lighten($link-color, 10%);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

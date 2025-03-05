@@ -1,18 +1,24 @@
+$primary-bg: #1a1a1a; 
+$secondary-bg: #2a2a2a;
+$text-color: #ffffff;
+$border-color: #444; 
+$hover-bg: #2a2a2a50; 
+$shadow-color: rgba(0, 0, 0, 0.3);
+
 .launches-container {
-    width: 90%;
-    max-width: 600px;
-    height: 40rem;
+    max-width: 100%;
+    height: auto;
     overflow-y: auto;
-    border: 1px solid #ccc;
+    border: 1px solid $border-color;
     border-radius: 8px;
     padding: 20px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    background-color: $secondary-bg;
+    box-shadow: 0 4px 10px $shadow-color;
     margin: 0 auto;
+    transition: box-shadow 0.3s ease;
 
     &:hover {
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 20px $shadow-color;
     }
 
     ul {
@@ -24,27 +30,51 @@
     li {
         margin-bottom: 15px;
         padding: 15px;
-        border: 1px solid #eee;
+        border: 1px solid $border-color;
         border-radius: 5px;
-        background-color: #ffffff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #1a1a1a50;
+        box-shadow: 0 2px 5px $shadow-color;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
 
         &:hover {
+            background-color: $hover-bg;
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px $shadow-color;
         }
 
         h2 {
             font-size: 1.5rem;
-            color: #333;
+            color: $text-color;
             margin: 0 0 5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         p {
             font-size: 1rem;
-            color: #666;
+            color: #ccc;
             margin: 5px 0;
         }
     }
+}
+
+.fade-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms, transform 300ms;
 }

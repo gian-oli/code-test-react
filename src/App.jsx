@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css'; // Import the SCSS file
+import './App.scss';
 import { Launches } from './components/Launch/Launch';
 import SearchBox from './components/SearchBox/SearchBox';
 
@@ -12,8 +12,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>SpaceX Launches</h1>
-      <SearchBox onSearch={handleSearch} />
+      <header className="App-header">
+        <h3>SpaceX Launches</h3>
+        <SearchBox onSearch={handleSearch} />
+      </header>
       <Launches searchTerm={searchTerm} />
     </div>
   );

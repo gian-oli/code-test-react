@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SearchBox.scss'; // Correct import if both files are in the same directory
+import './SearchBox.scss';
 
 const SearchBox = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = useState('');
