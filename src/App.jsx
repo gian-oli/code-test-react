@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './App.scss';
-import { Launches } from './components/Launch/Launch';
-import SearchBox from './components/SearchBox/SearchBox';
+import React, { useState } from "react";
+import "./App.scss";
+import { Launches } from "./components/Launch/Launch";
+import SearchBox from "./components/SearchBox/SearchBox";
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (term) => {
     setSearchTerm(term);
@@ -17,6 +17,9 @@ function App() {
         <SearchBox onSearch={handleSearch} />
       </header>
       <Launches searchTerm={searchTerm} />
+      <footer className="App-footer">
+        gian-oli
+      </footer>
     </div>
   );
 }

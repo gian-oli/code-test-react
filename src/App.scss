@@ -1,5 +1,5 @@
 $primary-bg: #1a1a1a;
-$header-bg: #282c34;
+$header-bg: #191b20;
 $text-color: #ffffff;
 $link-color: #61dafb;
 
@@ -13,6 +13,7 @@ body {
 }
 
 .App {
+  position: relative;
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -82,6 +83,16 @@ body {
   &:hover {
     color: lighten($link-color, 10%);
   }
+}
+
+.App-footer {
+  position: absolute; /* Change to fixed */
+  bottom: 0;
+  right: 0; /* Align to the right */
+  font-size: 8px;
+  background-color: #33333340; /* Optional: Add a background color */
+  color: white; /* Optional: Change text color for better contrast */
+  text-align: center; /* Center the text */
 }
 
 @keyframes App-logo-spin {
