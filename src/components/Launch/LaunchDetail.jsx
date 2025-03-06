@@ -34,6 +34,7 @@ export const LaunchDetail = ({ launches }) => {
           src={`https://www.youtube.com/embed/${launch.links.video_link.split('v=')[1]}`}
           allow="encrypted-media"
           allowFullScreen
+          title={`${launch.title}`}
           onLoad={() => setLoading(false)}
           >
 
