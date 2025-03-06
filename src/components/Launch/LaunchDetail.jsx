@@ -29,18 +29,24 @@ export const LaunchDetail = ({ launches }) => {
           Launch Date: {new Date(launch.launch_date_local).toLocaleString()}
         </p>
       </div>
-      <div className="video-container">
-        <iframe
-          src={`https://www.youtube.com/embed/${launch.links.video_link.split('v=')[1]}`}
-          allow="encrypted-media"
-          allowFullScreen
-          title={`${launch.title}`}
-          onLoad={() => setLoading(false)}
-          >
-
-          </iframe>
+      {launch.links.video_link != null ? (
+        <div className="video-container">
+          <iframe
+            src={`https://www.youtube.com/embed/${
+              launch.links.video_link.split("v=")[1]
+            }`}
+            allow="encrypted-media"
+            allowFullScreen
+            title={`${launch.title}`}
+            onLoad={() => setLoading(false)}
+          ></iframe>
           {loading && <p>Loading video...</p>}
-      </div>
+        </div>
+      ) : (
+        <div className="video-container">
+          <p>No video found...</p>
+        </div>
+      )}
     </div>
   );
 };
