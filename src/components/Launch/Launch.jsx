@@ -78,13 +78,15 @@ export const Launches = ({ searchTerm }) => {
 
     const observerInstance = new IntersectionObserver(callback, options);
 
-    if (lastLaunchRef.current) {
-      observerInstance.observe(lastLaunchRef.current);
+    const currentRef = lastLaunchRef.current;
+
+    if (currentRef) {
+      observerInstance.observe(currentRef);
     }
 
     return () => {
-      if (lastLaunchRef.current) {
-        observerInstance.unobserve(lastLaunchRef.current);
+      if (currentRef) {
+        observerInstance.unobserve(currentRef);
       }
     };
   }, [loading, hasMore]);
